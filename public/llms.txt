@@ -1,0 +1,34 @@
+# bodenlegerjob.ch
+
+> Die spezialisierte Jobbörse für Bodenleger-Fachkräfte in der Schweiz.
+
+bodenlegerjob.ch ist eine Nischen-Jobbörse für die Schweizer Bodenbelagsbranche. Die Plattform richtet sich an Bodenleger, Parkettleger, Plattenleger, Bodenbelagsmonteure, Estrichleger, Terrazzoleger, Industriebodenleger, Oberflächenspezialisten, Bodenbelagsplaner, Projektleiter Bodenbeläge, Bauleiter Bodenbeläge und Servicetechniker Bodenbeläge.
+
+## Wichtige Seiten
+
+- [Startseite](https://bodenlegerjob.ch/): Jobsuche mit Filtern nach Beruf, Ort, Umkreis, Pensum
+- [Bodenleger EFZ Jobs Zürich](https://bodenlegerjob.ch/bodenlegerjobs/bodenleger-efz/zh): Beispiel-Landingpage
+- [Sitemap](https://bodenlegerjob.ch/sitemap.xml): Alle verfügbaren Seiten
+
+## Kerninformationen
+
+- **Sprache**: Deutsch (Schweizer Markt)
+- **Regionen**: Alle Schweizer Kantone — Zürich, Bern, Basel, Aargau, St. Gallen, Luzern, Solothurn, Zug und weitere
+- **Berufe**: Bodenleger EFZ, Parkettleger EFZ, Plattenleger EFZ, Bodenbelagsmonteur, Estrichleger, Terrazzoleger, Industriebodenleger, Oberflächenspezialist, Bodenbelagsplaner, Projektleiter Bodenbeläge, Bauleiter Bodenbeläge, Servicetechniker Bodenbeläge
+- **Lohndaten (Richtwerte, CHF/Jahr)**:
+  - Bauleiter Bodenbeläge: 85'000 – 115'000
+  - Projektleiter Bodenbeläge: 80'000 – 105'000
+  - Bodenbelagsplaner: 75'000 – 95'000
+  - Industriebodenleger: 68'000 – 85'000
+  - Oberflächenspezialist: 68'000 – 85'000
+  - Terrazzoleger: 66'000 – 82'000
+  - Parkettleger EFZ: 65'000 – 82'000
+  - Bodenleger EFZ: 65'000 – 80'000
+  - Plattenleger EFZ: 65'000 – 80'000
+  - Estrichleger: 64'000 – 80'000
+  - Bodenbelagsmonteur: 62'000 – 78'000
+
+## Kontakt
+
+- **Website**: https://bodenlegerjob.ch
+- **Branche**: Personalvermittlung / Jobbörse — Bodenbelagsbranche Schweiz

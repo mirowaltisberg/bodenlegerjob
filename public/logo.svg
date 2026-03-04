@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
+  <!-- Floor plank / parquet mark -->
+  <g transform="translate(2,6)">
+    <!-- Three angled parquet planks -->
+    <rect x="3" y="6" width="8" height="26" rx="1.5" fill="#c17a3a" transform="rotate(-10 7 19)"/>
+    <rect x="11" y="3" width="8" height="32" rx="1.5" fill="#c17a3a"/>
+    <rect x="19" y="6" width="8" height="26" rx="1.5" fill="#c17a3a" transform="rotate(10 23 19)"/>
+  </g>
+
+  <!-- "Bodenlegerjob.ch" wordmark — text-based for simplicity -->
+  <text x="38" y="35" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="28" fill="#1e293b" letter-spacing="-0.5">Bodenleger</text>
+  <text x="216" y="35" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="28" fill="#c17a3a" letter-spacing="-0.5">job</text>
+  <text x="253" y="35" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="22" fill="#94a3b8" letter-spacing="-0.3">.ch</text>
+</svg>
