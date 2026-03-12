@@ -13,14 +13,45 @@ Swiss job board for floor-laying trades — live at [bodenlegerjob.ch](https://w
 
 - **Live job listings** — scraped Swiss floor-laying jobs, updated regularly
 - **Search & filter** — by keyword, location (with radius), job type, workload, remote
-- **SEO landing pages** — pre-rendered pages for top role/canton combos (144 pages)
+- **SEO landing pages** — pre-rendered pages for top role/canton combos
 - **CV upload & apply** — applicants submit name, email, phone + CV (PDF/DOCX), stored in Supabase Storage
 - **Swiss postal code autocomplete** — location search with PLZ support
 - **Vercel Analytics** — page view tracking
 
-## Roles covered
+## Project Structure
 
-Bodenleger EFZ, Parkettleger EFZ, Plattenleger EFZ, Bodenbelagsmonteur, Estrichleger, Terrazzoleger, Industriebodenleger, Oberflächenspezialist, Bodenbelagsplaner, Projektleiter Bodenbeläge, Bauleiter Bodenbeläge, Servicetechniker Bodenbeläge
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── applications/   # POST — job applications + CV upload
+│   │   ├── jobs/            # GET — search & detail endpoints
+│   │   ├── postal-codes/    # GET — Swiss PLZ autocomplete
+│   │   └── scrape/          # POST — trigger Python scraper
+│   ├── bodenlegerjobs/      # SEO landing pages
+│   ├── jobs/[id]/           # Job detail page (SSR)
+│   └── page.tsx             # Homepage with search
+├── components/              # UI components (apply modal, search, etc.)
+├── lib/
+│   ├── supabase.ts          # Supabase client (public + admin)
+│   ├── job-catalog.ts       # Core search, filter, sort, scoring logic
+│   ├── scraped-jobs.ts      # Data layer (Supabase queries + JSON fallback)
+│   └── ...                  # Utils, types, location, text cleaning
+└── data/
+    └── scraped-jobs.json    # Local backup of scraped data
+scripts/
+├── scrape-jobs.py           # Job scraper (dual-write: JSON + Supabase)
+└── seed-supabase.ts         # One-time DB seed from JSON
+```
+
+## Database (Supabase)
+
+| Table | Purpose |
+|-------|---------|
+| `jobs` | All scraped job listings |
+| `applications` | Job applications with CV references |
+| `scrape_metadata` | Last scrape timestamp + total count |
+| `cvs` (storage) | Uploaded CV files (PDF/DOCX, max 10 MB) |
 
 ## Development
 
@@ -28,6 +59,15 @@ Bodenleger EFZ, Parkettleger EFZ, Plattenleger EFZ, Bodenbelagsmonteur, Estrichl
 npm install
 cp .env.local.example .env.local  # add your Supabase keys
 npm run dev
+```
+
+## Scraping
+
+```bash
+cd scripts
+python -m venv .venv && source .venv/bin/activate
+pip install python-jobspy supabase
+python scrape-jobs.py
 ```
 
 ## Deployment
