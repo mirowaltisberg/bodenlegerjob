@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" fill="none">
   <!-- Floor plank / parquet mark -->
-  <g transform="translate(2,6)">
+  <g transform="translate(2, 8.4) scale(0.875)">
     <!-- Three angled parquet planks -->
     <rect x="3" y="6" width="8" height="26" rx="1.5" fill="#c17a3a" transform="rotate(-10 7 19)"/>
     <rect x="11" y="3" width="8" height="32" rx="1.5" fill="#c17a3a"/>
