@@ -1,7 +1,7 @@
 import type { JobListing } from "@/lib/job-types";
 import { estimateSalary } from "@/lib/salary-estimates";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://bodenlegerjob.ch";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.bodenlegerjob.ch";
 
 function mapEmploymentType(type: string): string {
   const lower = type.toLowerCase();
