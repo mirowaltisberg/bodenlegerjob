@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 32, height: 32 };
+export const size = { width: 48, height: 48 };
 export const contentType = "image/png";
 
 export default function Icon() {
@@ -14,15 +14,15 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#c17a3a",
-          borderRadius: "7px",
+          borderRadius: "10px",
         }}
       >
         {/* Three floor planks icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
-          width="20"
-          height="20"
+          width="30"
+          height="30"
         >
           <rect x="4" y="4" width="6" height="24" rx="1" fill="white" transform="rotate(-8 7 16)"/>
           <rect x="13" y="2" width="6" height="28" rx="1" fill="white"/>
