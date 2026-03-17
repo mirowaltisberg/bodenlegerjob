@@ -42,7 +42,7 @@ export function buildJobPostingSchema(job: JobListing) {
     industry: "Bodenbeläge & Bodenlegertechnik",
     hiringOrganization: {
       "@type": "Organization",
-      name: job.company,
+      name: job.company?.trim() || "Arbeitgeber auf bodenlegerjob.ch",
       ...(job.companyUrl ? { sameAs: job.companyUrl } : {}),
     },
     jobLocation: {
