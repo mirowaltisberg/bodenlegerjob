@@ -149,6 +149,77 @@ const HARD_NEGATIVE_TITLE_KEYWORDS = [
   "human resources",
 ];
 
+/** Keywords that uniquely identify THIS trade (bodenleger) */
+const TRADE_IDENTITY_KEYWORDS = [
+  "bodenleger",
+  "boden",
+  "parkett",
+  "parkettleger",
+  "plattenleger",
+  "fliesen",
+  "fliesenleger",
+  "laminat",
+  "vinyl",
+  "teppich",
+  "estrich",
+  "estrichleger",
+  "terrazzo",
+  "terrazzoleger",
+  "bodenbelag",
+  "bodenbelagsmonteur",
+  "belagsmonteur",
+  "keramik",
+  "keramiker",
+  "industrieboden",
+  "epoxid",
+  "kunstharz",
+  "naturstein",
+];
+
+/** Primary keywords from OTHER trades — reject if title matches these without any TRADE_IDENTITY match */
+const OTHER_TRADE_KEYWORDS = [
+  "elektro",
+  "elektriker",
+  "elektroinstallateur",
+  "elektromonteur",
+  "elektroniker",
+  "automatiker",
+  "schaltanlagen",
+  "photovoltaik",
+  "starkstrom",
+  "schwachstrom",
+  "sanitär",
+  "sanitaer",
+  "sanitärinstallateur",
+  "heizung",
+  "heizungsinstallateur",
+  "heizungsmonteur",
+  "klima",
+  "klimatechniker",
+  "kälte",
+  "kältetechniker",
+  "lüftung",
+  "lüftungsmonteur",
+  "spengler",
+  "bauspengler",
+  "dachdecker",
+  "dachdeckerin",
+  "zimmermann",
+  "holzbau",
+  "holzkonstruktion",
+  "schreiner",
+  "schreinerei",
+  "tischler",
+  "möbel",
+  "möbelschreiner",
+  "gärtner",
+  "gaertner",
+  "garten",
+  "landschaftsgärtner",
+  "baumpflege",
+  "gartenbau",
+];
+
 interface NormalizedParams {
   q: string;
   loc: string;
@@ -210,10 +281,17 @@ function scoreScrapedJob(job: ScrapedJob): number {
     `${job.description} ${job.fullDescription} ${requirements.join(" ")} ${responsibilities.join(" ")}`
   );
 
+  const titleTradeIdentityHits = countKeywordHits(title, TRADE_IDENTITY_KEYWORDS);
+  const titleOtherTradeHits = countKeywordHits(title, OTHER_TRADE_KEYWORDS);
   const titleSignalHits = countKeywordHits(title, CORE_TITLE_KEYWORDS);
   const hardNegativeTitleHits = countKeywordHits(title, HARD_NEGATIVE_TITLE_KEYWORDS);
   const bodySignalHits = countKeywordHits(body, POSITIVE_KEYWORDS);
   const bodyNegativeHits = countKeywordHits(body, NEGATIVE_KEYWORDS);
+
+  // Title mentions another trade but NOT this trade → reject
+  if (titleOtherTradeHits > 0 && titleTradeIdentityHits === 0) {
+    return -100;
+  }
 
   if (hardNegativeTitleHits > 0 && titleSignalHits === 0) {
     return -100;
