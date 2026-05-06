@@ -19,7 +19,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.bodenlegerjob.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "246 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
     template: "%s | bodenlegerjob.ch",
   },
   description:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "Stellen Bodenbelagsbranche Schweiz",
   ],
   openGraph: {
-    title: "246 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Bodenleger Jobs in der Schweiz. Stellen für Bodenleger EFZ, Parkettleger, Plattenleger, Bodenbelagsmonteur & mehr. Jetzt Lebenslauf einreichen.",
     type: "website",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "246 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
     description:
       "Finde aktuelle Bodenleger Jobs in der Schweiz. Stellen für Bodenleger EFZ, Parkettleger, Plattenleger, Bodenbelagsmonteur & mehr. Jetzt Lebenslauf einreichen.",
   },
