@@ -19,11 +19,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.bodenlegerjob.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    default: "Bodenleger Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
     template: "%s | bodenlegerjob.ch",
   },
   description:
-    "Finde aktuelle Bodenleger Jobs in der Schweiz. Stellen für Bodenleger EFZ, Parkettleger, Plattenleger, Bodenbelagsmonteur & mehr. Jetzt Lebenslauf einreichen.",
+    "Bodenleger Jobs Schweiz: Bodenleger, Plattenleger, Parkettleger, Vinyl-Verleger, Industrieboden. Lohn, Ausbildung, GAV — täglich aktualisierte Stellen.",
   keywords: [
     "Bodenlegerjobs",
     "Bodenlegerjobs Schweiz",
