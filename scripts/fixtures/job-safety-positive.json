@@ -1,0 +1,79 @@
+{
+  "jobs": [
+    {
+      "trade": "boden",
+      "id": "scraped-boden-0b9f21ea15be",
+      "jobUrl": "https://jobs.example.ch/boden-1",
+      "source": "indeed",
+      "title": "Bodenleger EFZ",
+      "company": "Beispiel Bodenbeläge AG",
+      "location": "Zürich, Zürich",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Verlegen elastischer und textiler Bodenbeläge in Neu- und Umbauten in der Region Zürich.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Bodenleger/in EFZ"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-e12a3f7e16a4",
+      "jobUrl": "https://jobs.example.ch/boden-2",
+      "source": "linkedin",
+      "title": "Projektleiter Bodenbeläge 80–100%",
+      "company": "Muster Belagstechnik GmbH",
+      "location": "Bern, Bern",
+      "type": "Festanstellung",
+      "workload": "80-100%",
+      "datePosted": "$TODAY",
+      "description": "Koordination von Bodenbelagprojekten, Terminen und Fachpartnern vom Start bis zur Übergabe.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Projektleiter/in Bodenbelag"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-138ce36b08e2",
+      "jobUrl": "https://jobs.example.ch/boden-3",
+      "source": "google",
+      "title": "Parkettleger",
+      "company": "Parkett Beispiel AG",
+      "location": "Basel, Basel-Stadt",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Verlegen, Schleifen und Oberflächenbehandeln von Parkettböden.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Parkettleger/in"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-1ed7c7903141",
+      "jobUrl": "https://jobs.example.ch/boden-4",
+      "source": "indeed",
+      "title": "Plattenleger EFZ",
+      "company": "Platten Muster AG",
+      "location": "Luzern, Luzern",
+      "type": "Vollzeit",
+      "workload": "80-100%",
+      "datePosted": "$TODAY",
+      "description": "Verlegen keramischer Platten und Ausführen sauberer Fugen und Anschlüsse.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Plattenleger/in EFZ"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-9ea6240f5306",
+      "jobUrl": "https://jobs.example.ch/boden-efz-token",
+      "source": "indeed",
+      "title": "Bodenleger EFZPlus",
+      "company": "Token Test AG",
+      "location": "Zug, Zug",
+      "type": "Vollzeit",
+      "workload": "100%",
+      "datePosted": "$TODAY",
+      "description": "Vorbereitung von Untergründen und Verlegung verschiedener Bodenbeläge im Einsatzgebiet Zug.",
+      "expectedDisposition": "ACCEPT",
+      "expectedPublicTitle": "Bodenleger/in"
+    }
+  ]
+}

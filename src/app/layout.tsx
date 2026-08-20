@@ -1,49 +1,44 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import { JsonLd } from "@/components/json-ld";
-import { HapticProvider } from "@/components/haptic-provider";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.bodenlegerjob.ch";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://bodenlegerjob.ch";
+const ANALYTICS_ENABLED = process.env.ANALYTICS_ENABLED === "true";
+const GA_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_GA_ID : undefined;
+const FB_PIXEL_ID = ANALYTICS_ENABLED ? process.env.NEXT_PUBLIC_FB_PIXEL_ID : undefined;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bodenleger Jobs Schweiz 2026 | Stellen, Lohn & Ausbildung",
+    default: "Bodenbelag Jobs Schweiz | Stellen für Bodenbelag-Fachkräfte",
     template: "%s | bodenlegerjob.ch",
   },
   description:
-    "Bodenleger Jobs Schweiz: Bodenleger, Plattenleger, Parkettleger, Vinyl-Verleger, Industrieboden. Lohn, Ausbildung, GAV — täglich aktualisierte Stellen.",
+    "Finde Stellen für Boden-Parkettleger, Bodenleger, Parkettleger, Plattenleger und Projektleiter Bodenbelag in der Schweiz.",
   keywords: [
-    "Bodenlegerjobs",
-    "Bodenlegerjobs Schweiz",
+    "Bodenbelagjobs",
+    "Bodenbelagjobs Schweiz",
     "Bodenleger Jobs",
+    "Projektleiter Bodenbelag",
     "Parkettleger Jobs",
     "Plattenleger Jobs",
-    "Bodenbelagsmonteur Jobs",
-    "Projektleiter Bodenbeläge",
-    "Estrichleger Jobs",
-    "Fliesenleger Jobs",
-    "Terrazzoleger Jobs",
-    "Industriebodenleger",
-    "Bauleiter Bodenbeläge",
-    "Bodenbelagsplaner",
-    "Stellen Bodenbelagsbranche Schweiz",
+    "Industriebodenleger Jobs",
+    "Stellen Bodenbelagbranche Schweiz",
+    "Bodenbelag Job Schweiz",
+    "Bodenbelag Stellen Schweiz",
+    "Bodenleger Stellenangebote",
+    "Bodenleger Jobs Schweiz",
+    "Bodenleger Temporär",
+    "Bodenbelag Festanstellung",
+    "Bodenleger Lohn Schweiz",
   ],
   openGraph: {
-    title: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Bodenbelag Jobs Schweiz | Stellenangebote",
     description:
-      "Finde aktuelle Bodenleger Jobs in der Schweiz. Stellen für Bodenleger EFZ, Parkettleger, Plattenleger, Bodenbelagsmonteur & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Stellenangebote für Boden-Parkettleger EFZ, Bodenleger, Parkett, Platten und Projektleitung Bodenbelag.",
     type: "website",
     url: "/",
     siteName: "bodenlegerjob.ch",
@@ -51,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "607 Bodenleger Jobs Schweiz 2026 | Offene Stellen finden",
+    title: "Bodenbelag Jobs Schweiz | Stellenangebote",
     description:
-      "Finde aktuelle Bodenleger Jobs in der Schweiz. Stellen für Bodenleger EFZ, Parkettleger, Plattenleger, Bodenbelagsmonteur & mehr. Jetzt Lebenslauf einreichen.",
+      "Finde Stellenangebote für Boden-Parkettleger EFZ, Bodenleger, Parkett, Platten und Projektleitung Bodenbelag.",
   },
   alternates: {
     canonical: "/",
@@ -89,10 +84,9 @@ const organizationSchema = {
   "@type": "Organization",
   name: "bodenlegerjob.ch",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/logo.svg`,
   description:
-    "bodenlegerjob.ch ist die spezialisierte Jobbörse für Bodenleger-Fachkräfte in der Schweiz. Finde offene Stellen als Bodenleger, Parkettleger, Plattenleger, Bodenbelagsmonteur und mehr.",
-  foundingDate: "2025",
+    "bodenlegerjob.ch bündelt Stellenangebote mit klarem Bezug zum Bodenbelaggewerk in der Schweiz.",
   areaServed: {
     "@type": "Country",
     name: "Switzerland",
@@ -102,15 +96,8 @@ const organizationSchema = {
     "@type": "ContactPoint",
     contactType: "customer service",
     availableLanguage: "German",
-    url: `${SITE_URL}/`,
+    url: `${SITE_URL}/kontakt`,
   },
-  sameAs: [
-    "https://www.youtube.com/@bodenlegerjob",
-    "https://www.facebook.com/bodenlegerjob",
-    "https://www.instagram.com/bodenlegerjob",
-    "https://www.linkedin.com/company/bodenlegerjob",
-    "https://twitter.com/bodenlegerjob",
-  ],
 };
 
 const websiteSchema = {
@@ -119,8 +106,13 @@ const websiteSchema = {
   name: "bodenlegerjob.ch",
   url: SITE_URL,
   description:
-    "Die spezialisierte Jobbörse für Bodenleger-Fachkräfte in der Schweiz.",
-  inLanguage: "de",
+    "Die spezialisierte Jobbörse für Bodenbelag-Fachkräfte in der Schweiz.",
+  inLanguage: "de-CH",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 export default function RootLayout({
@@ -129,31 +121,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de-CH">
       <head>
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        {FB_PIXEL_ID && <link rel="dns-prefetch" href="https://connect.facebook.net" />}
       </head>
-      <body lang="de" className={`${plusJakarta.variable} antialiased font-sans bg-slate-50`}>
+      <body lang="de-CH" className="antialiased font-sans">
+        <a className="skip-link" href="#main-content">
+          Zum Inhalt
+        </a>
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
-        <HapticProvider>{children}</HapticProvider>
-        <Analytics />
-        <SpeedInsights />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}`}
-          strategy="lazyOnload"
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`
+        {children}
+        {ANALYTICS_ENABLED && <Analytics />}
+        {ANALYTICS_ENABLED && <SpeedInsights />}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="lazyOnload"
+            />
+            <Script id="gtag-init" strategy="lazyOnload">
+              {`
             window.dataLayer=window.dataLayer||[];
             function gtag(){dataLayer.push(arguments);}
             gtag('js',new Date());
-            gtag('config','${process.env.NEXT_PUBLIC_GA_ID || "G-0000000000"}');
+            gtag('config','${GA_ID}');
           `}
-        </Script>
-        <Script id="fb-pixel" strategy="lazyOnload">
-          {`
+            </Script>
+          </>
+        )}
+        {FB_PIXEL_ID && (
+          <Script id="fb-pixel" strategy="lazyOnload">
+            {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -162,19 +161,23 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}');
+            fbq('init', '${FB_PIXEL_ID}');
             fbq('track', 'PageView');
           `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_FB_PIXEL_ID || "0000000000000000"}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+          </Script>
+        )}
+        {FB_PIXEL_ID && (
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+              alt=""
+            />
+          </noscript>
+        )}
       </body>
     </html>
   );

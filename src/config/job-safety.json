@@ -1,0 +1,170 @@
+{
+  "trade": "boden",
+  "idPattern": "^scraped-boden-[0-9a-f]{12}$",
+  "allowedSources": ["google", "indeed", "linkedin"],
+  "tradeContextPatterns": [
+    "bodenbelag",
+    "bodenbeläg",
+    "bodenleger",
+    "parkett",
+    "plattenbelag",
+    "unterlagsboden",
+    "industrieboden"
+  ],
+  "hardNegativeTitlePatterns": [
+    "pflege",
+    "spitex",
+    "gesundheit",
+    "sozial",
+    "verkauf",
+    "sales",
+    "marketing",
+    "jurist",
+    "anwalt",
+    "fahrer",
+    "chauffeur",
+    "logistik",
+    "reinigung",
+    "koch",
+    "küche",
+    "kueche",
+    "arzt",
+    "medizin",
+    "software",
+    "developer",
+    "data scientist",
+    "human resources",
+    "product manager",
+    "product owner",
+    "frontend",
+    "backend",
+    "devops",
+    "buchhalt",
+    "accounting",
+    "controller",
+    "internship",
+    "praktikum",
+    "verkaufsberater",
+    "ingénieur",
+    "technicien",
+    "électricien",
+    "elettricista",
+    "disegnatore"
+  ],
+  "otherTradeTitlePatterns": [
+    "elektro",
+    "elektriker",
+    "heizung",
+    "heizungsinstallateur",
+    "heizungsmonteur",
+    "wärmepump",
+    "waermepump",
+    "lüftung",
+    "lueftung",
+    "kälte",
+    "kaelte",
+    "klima",
+    "spengler",
+    "dachdecker",
+    "zimmermann",
+    "holzbau",
+    "schreiner",
+    "sanitär",
+    "sanitaer",
+    "maler",
+    "gipser",
+    "maurer",
+    "gärtner",
+    "gaertner",
+    "hlks",
+    "hvac"
+  ],
+  "highSpecificityTitles": [
+    { "pattern": "industriebodenleg|bodenbeschicht|kunstharzboden", "publicTitle": "Industriebodenleger/in", "profile": "industrial" },
+    { "pattern": "parkettleger|parqueteur", "publicTitle": "Parkettleger/in", "profile": "parquet" },
+    { "pattern": "plattenleger|plattenbelagsleg|fliesenleger|plättlileger|plaettlileger", "publicTitle": "Plattenleger/in", "profile": "tile" },
+    { "pattern": "estrichleger|unterlagsbodenleg", "publicTitle": "Unterlagsbodenleger/in", "profile": "industrial" },
+    { "pattern": "bodenbelags(?:leger|monteur|fach)|bodenleger", "publicTitle": "Bodenleger/in", "profile": "installation" }
+  ],
+  "broadTitlesRequiringTradeContext": [
+    { "pattern": "projektleit", "publicTitle": "Projektleiter/in Bodenbelag", "profile": "leadership" },
+    { "pattern": "bauleit|bauführ|baufuehr", "publicTitle": "Bauleiter/in Bodenbeläge", "profile": "leadership" },
+    { "pattern": "vorarbeit|polier|teamleit", "publicTitle": "Vorarbeiter/in Bodenbeläge", "profile": "leadership" },
+    { "pattern": "arbeitsvorbereit|kalkulat|technisch.*sachbearbeit", "publicTitle": "Fachperson Bodenbeläge", "profile": "planning" },
+    { "pattern": "monteur|verleger|fachperson", "publicTitle": "Bodenleger/in", "profile": "installation" }
+  ],
+  "profiles": {
+    "leadership": {
+      "responsibilities": [
+        "Bodenbelagprojekte planen, koordinieren und bis zur Übergabe begleiten",
+        "Termine, Qualität und Arbeitssicherheit auf der Baustelle sicherstellen",
+        "Absprachen mit Fachplanung, Bauleitung und Kundschaft führen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung im Bodenbelagbereich",
+        "Erfahrung in der Leitung oder Koordination von Bodenbelagarbeiten",
+        "Selbstständige, zuverlässige und lösungsorientierte Arbeitsweise"
+      ]
+    },
+    "planning": {
+      "responsibilities": [
+        "Ausmasse, Materialbedarf und Arbeitsabläufe für Bodenbelagsarbeiten vorbereiten",
+        "Ausführungsdetails mit Bauleitung, Lieferanten und Montageteams koordinieren",
+        "Offerten und Projektunterlagen sorgfältig prüfen und nachführen"
+      ],
+      "requirements": [
+        "Ausbildung oder fundierte Praxis im Bodenbelagsgewerbe",
+        "Gutes Verständnis für Ausmass, Materialien und technische Dokumentation",
+        "Strukturierte, sorgfältige und teamorientierte Arbeitsweise"
+      ]
+    },
+    "parquet": {
+      "responsibilities": [
+        "Parkett und Holzbeläge vorbereiten, verlegen und oberflächenbehandeln",
+        "Untergründe prüfen und passende Verlege- und Klebesysteme einsetzen",
+        "Anschlüsse, Sockel und Übergänge präzise ausführen"
+      ],
+      "requirements": [
+        "Ausbildung oder fundierte Erfahrung in der Parkettverlegung",
+        "Sicherer Umgang mit Holz, Maschinen und Oberflächenbehandlungen",
+        "Präzise, saubere und selbstständige Arbeitsweise"
+      ]
+    },
+    "tile": {
+      "responsibilities": [
+        "Keramische Platten und Naturstein nach Plan verlegen",
+        "Untergründe, Abdichtungen, Fugen und Anschlüsse fachgerecht ausführen",
+        "Materialien zuschneiden und Flächen sauber fertigstellen"
+      ],
+      "requirements": [
+        "Ausbildung oder fundierte Erfahrung als Plattenleger/in",
+        "Sicherer Umgang mit Verlegeplänen, Werkzeugen und Materialien",
+        "Sorgfältige, belastbare und qualitätsbewusste Arbeitsweise"
+      ]
+    },
+    "industrial": {
+      "responsibilities": [
+        "Unterlags- oder Industrieböden vorbereiten und fachgerecht einbauen",
+        "Untergründe prüfen, nivellieren und Beschichtungssysteme verarbeiten",
+        "Arbeitsschritte und Qualitätskontrollen nachvollziehbar dokumentieren"
+      ],
+      "requirements": [
+        "Praxis im Unterlagsboden-, Estrich- oder Beschichtungsbereich",
+        "Sicherer Umgang mit Maschinen, Mischungen und Schutzvorgaben",
+        "Belastbare, sorgfältige und teamorientierte Arbeitsweise"
+      ]
+    },
+    "installation": {
+      "responsibilities": [
+        "Bodenbeläge und Sockel fachgerecht vorbereiten, zuschneiden und verlegen",
+        "Untergründe prüfen und technische Vorgaben sicher umsetzen",
+        "Flächen, Anschlüsse und Übergänge sauber und termingerecht fertigstellen"
+      ],
+      "requirements": [
+        "Abgeschlossene Ausbildung oder fundierte Erfahrung im Bodenbelagbereich",
+        "Verantwortungsbewusste und selbstständige Arbeitsweise",
+        "Zuverlässigkeit, Teamgeist und ein hohes Qualitätsbewusstsein"
+      ]
+    }
+  }
+}

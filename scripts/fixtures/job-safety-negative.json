@@ -1,0 +1,128 @@
+{
+  "jobs": [
+    {
+      "trade": "boden",
+      "id": "scraped-boden-840295e6f404",
+      "jobUrl": "https://jobs.example.ch/reject-1",
+      "source": "indeed",
+      "title": "Elektroinstallateur EFZ",
+      "description": "Der Betrieb führt neben Elektroarbeiten auch Bodenbelagsprojekte aus.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-b9830013de12",
+      "jobUrl": "https://jobs.example.ch/reject-2",
+      "source": "google",
+      "title": "Projektleiter Gebäudetechnik",
+      "description": "Im Projekt geht es ausschliesslich um Bodenbeläge.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-57265693ff45",
+      "jobUrl": "https://jobs.example.ch/review-1",
+      "source": "linkedin",
+      "title": "Bodenleger / Maler",
+      "description": "Gemischte Funktion für Bodenbelags- und Malerarbeiten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REVIEW"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-958b224d4fb5",
+      "jobUrl": "https://jobs.example.ch/reject-3",
+      "source": "indeed",
+      "title": "Pflegefachperson Bodenstation",
+      "description": "Pflege und Betreuung in einer medizinischen Einrichtung.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "elektro",
+      "id": "scraped-boden-fb418c1d08fd",
+      "jobUrl": "https://jobs.example.ch/wrong-trade",
+      "source": "indeed",
+      "title": "Bodenleger",
+      "description": "Verlegen von Bodenbelägen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "wrong-trade"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-000000000000",
+      "jobUrl": "https://jobs.example.ch/id-mismatch",
+      "source": "indeed",
+      "title": "Bodenleger",
+      "description": "Verlegen und Prüfen von Bodenbelägen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "id-url-mismatch"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-4fbd9d1ea600",
+      "jobUrl": "https://jobs.example.ch/generic-monteur",
+      "source": "indeed",
+      "title": "Monteur 100%",
+      "description": "Montage von Bodenbelägen und Sockelleisten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-58c85b67a1f8",
+      "jobUrl": "https://jobs.example.ch/ambiguous-handwerker",
+      "source": "google",
+      "title": "Handwerker 100%",
+      "description": "Verlegen von Parkett und Bodenbelägen.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-F146A51E95B4",
+      "jobUrl": "https://jobs.example.ch/uppercase-id",
+      "source": "linkedin",
+      "title": "Bodenleger",
+      "description": "Verlegen von Bodenbelägen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "invalid-id"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-3fd524fd2f33",
+      "jobUrl": "https://jobs.example.ch/legacy-id",
+      "source": "indeed",
+      "title": "Bodenleger",
+      "description": "Verlegen von Bodenbelägen in Neu- und Umbauten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "ACCEPT",
+      "expectedIdentityError": "invalid-id"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-ecb644de573f",
+      "jobUrl": "https://jobs.example.ch/trade-sales",
+      "source": "indeed",
+      "title": "Verkaufsberater Bodenbeläge",
+      "description": "Beratung und Verkauf im Ausstellungsraum.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    },
+    {
+      "trade": "boden",
+      "id": "scraped-boden-df770f64aed4",
+      "jobUrl": "https://jobs.example.ch/body-only-planer",
+      "source": "google",
+      "title": "Projektleiter",
+      "description": "Planung von Bodenbelagsarbeiten.",
+      "datePosted": "$TODAY",
+      "expectedDisposition": "REJECT"
+    }
+  ]
+}

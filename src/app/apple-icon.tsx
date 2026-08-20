@@ -13,20 +13,16 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#c17a3a",
-          borderRadius: "36px",
+          background: "#f1e8dc",
+          borderRadius: "30px",
         }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 48 48"
-          width="120"
-          height="120"
-        >
-          <rect x="8" y="6" width="8" height="36" rx="2" fill="white" transform="rotate(-8 12 24)"/>
-          <rect x="20" y="3" width="8" height="42" rx="2" fill="white"/>
-          <rect x="32" y="6" width="8" height="36" rx="2" fill="white" transform="rotate(8 36 24)"/>
-        </svg>
+        <div style={{ width: 120, height: 120, display: "flex", flexWrap: "wrap", gap: 10 }}>
+          <span style={{ width: 55, height: 55, background: "#9a4f31" }} />
+          <span style={{ width: 55, height: 55, background: "#d5aa70" }} />
+          <span style={{ width: 55, height: 55, background: "#3f6657" }} />
+          <span style={{ width: 55, height: 55, background: "#e6d7c0" }} />
+        </div>
       </div>
     ),
     { ...size }

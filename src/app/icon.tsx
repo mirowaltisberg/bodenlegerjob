@@ -13,21 +13,16 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#c17a3a",
-          borderRadius: "10px",
+          background: "#f1e8dc",
+          borderRadius: "5px",
         }}
       >
-        {/* Three floor planks icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 32"
-          width="30"
-          height="30"
-        >
-          <rect x="4" y="4" width="6" height="24" rx="1" fill="white" transform="rotate(-8 7 16)"/>
-          <rect x="13" y="2" width="6" height="28" rx="1" fill="white"/>
-          <rect x="22" y="4" width="6" height="24" rx="1" fill="white" transform="rotate(8 25 16)"/>
-        </svg>
+        <div style={{ width: 34, height: 34, display: "flex", flexWrap: "wrap", gap: 3 }}>
+          <span style={{ width: 15, height: 15, background: "#9a4f31" }} />
+          <span style={{ width: 15, height: 15, background: "#d5aa70" }} />
+          <span style={{ width: 15, height: 15, background: "#3f6657" }} />
+          <span style={{ width: 15, height: 15, background: "#e6d7c0" }} />
+        </div>
       </div>
     ),
     { ...size }
