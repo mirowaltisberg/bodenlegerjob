@@ -51,6 +51,7 @@ export function DirectHireOpportunityFeed({
           </p>
           <Link
             href={opportunity.ctaHref}
+            data-analytics-action={`direct_hire_contact:${opportunity.id}`}
             className="mt-4 inline-flex min-h-11 items-center border border-primary/40 px-4 py-2 text-sm font-bold text-primary hover:bg-accent"
           >
             Unverbindlich Kontakt aufnehmen
