@@ -9,7 +9,7 @@ export function DirectHireOpportunityFeed({
   if (opportunities.length === 0) return null;
 
   return (
-    <div className="mt-3 space-y-3 sm:mt-4 sm:space-y-4" aria-label="Direktanstellungsprofile">
+    <div className="mt-3 space-y-3 sm:mt-4 sm:space-y-4" role="region" aria-label="Direktanstellungsprofile">
       {opportunities.map((opportunity) => (
         <article
           key={opportunity.id}
